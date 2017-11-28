@@ -32,7 +32,7 @@ def process_train_data(frame):
   for i in array[:, 1:]:
     for k in i:
       if (k != 0):
-        k = 225
+        k = 255
 
   # split feature and label
   features, labels = array[:, 1:], array[:, 0]
