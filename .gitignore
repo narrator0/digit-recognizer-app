@@ -25,4 +25,5 @@
 /node_modules
 
 *.pyc
-/training/data/*
+training/data/*
+app/classifier/*
