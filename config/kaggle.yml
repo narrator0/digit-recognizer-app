@@ -1,0 +1,9 @@
+default:
+  UserName:
+  Password:
+
+development:
+  <<: *default
+
+production:
+  <<: *default

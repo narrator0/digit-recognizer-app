@@ -8,18 +8,37 @@ class BlockCanvas {
     let blockHtml = '<div class="block"></div>'
 
     for (let i = 0; i < 28 * 28; i++)
-      this.element.insertAdjacentHTML('beforeend', blockHtml)
+      this.element.insertAdjacentHTML('beforeend', [
+        '<div class="block" block-id="',
+        i,
+        '"></div>'
+      ].join(''))
 
     this.blocks = this.element.getElementsByClassName('block')
 
     for (let i = 0; i < this.blocks.length; i++) {
       this.blocks[i].addEventListener('mouseover', (e) => {
-        if (e.buttons == 1)
-          e.target.className += ' hovered'
+        if (e.buttons == 1) {
+          let id = parseInt(e.target.getAttribute('block-id')),
+              targetIds = [id - 1, id, id + 1]
+
+          targetIds.forEach((id) => {
+            console.log(id)
+            let element = $(`.block[block-id="${id}"]`)
+            element.addClass('hovered')
+          })
+        }
       })
 
       this.blocks[i].addEventListener('mousedown', (e) => {
-        e.target.className += ' hovered'
+        let id = parseInt(e.target.getAttribute('block-id')),
+            targetIds = [id - 1, id, id + 1]
+
+        targetIds.forEach((id) => {
+          console.log(id)
+          let element = $(`.block[block-id="${id}"]`)
+          element.addClass('hovered')
+        })
       })
     }
   }
