@@ -1,5 +1,9 @@
 @import "~bulma/bulma"
 
+body,
+.section
+  background-color: whitesmoke
+
 .flex-centered
   display: flex
   justify-content: center
@@ -35,10 +39,11 @@
   width: (100% / 28)
   height: (100% / 28)
   margin: 0 !important
-  border-radius: 50%
+  background-color: $white
+  border: .5px dotted gray
 
   &.hovered
-    background-color: $blue
+    background-color: $black
 
 .prediction-container
   border-radius: 2px
