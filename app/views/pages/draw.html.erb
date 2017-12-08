@@ -8,12 +8,13 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section has-background-">
   <div class="container">
     <div class="columns">
       <div class="column is-5">
+        <div class="title">Draw on the left</div>
         <div class="canvas">
-          <div class="block-container" id="canvas"></div>
+          <div class="block-container has-shadow" id="canvas"></div>
         </div>
       </div>
       <div class="column is-2 flex-centered">
@@ -21,7 +22,10 @@
         <div class="reset button is-danger">Reset</div>
       </div>
       <div class="column is-5">
-        <div id="prediction" class="flex-centered"></div>
+        <div class="title">Result will be shown here</div>
+        <div class="prediction-container has-shadow">
+           <div id="prediction" class="flex-centered"></div>
+        </div>
       </div>
     </div>
   </div>
