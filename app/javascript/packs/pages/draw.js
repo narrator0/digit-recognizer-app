@@ -26,7 +26,7 @@ document.getElementsByClassName('submit')[0].addEventListener('click', (e) => {
   .then((res) => {
     setTimeout(() => {
       e.target.classList.remove('is-loading')
-    }, 200)
+    }, 400)
 
     resultElement.innerHTML = res.data.predict
   })
