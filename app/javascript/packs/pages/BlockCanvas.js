@@ -74,7 +74,7 @@ class BlockCanvas {
     }
 
     highlightIds.forEach((id) => {
-      this.blocks[id].classList += ' hovered'
+      this.blocks[id].classList.add('hovered')
     })
   }
 }

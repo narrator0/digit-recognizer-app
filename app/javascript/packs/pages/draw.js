@@ -17,11 +17,17 @@ document.getElementsByClassName('reset')[0].addEventListener('click', (e) => {
 document.getElementsByClassName('submit')[0].addEventListener('click', (e) => {
   e.preventDefault()
 
+  e.target.classList.add('is-loading')
+
   let digits = blockCanvas.submit()
   axios.post('api/predict', {
     digits: digits
   })
   .then((res) => {
+    setTimeout(() => {
+      e.target.classList.remove('is-loading')
+    }, 200)
+
     resultElement.innerHTML = res.data.predict
   })
 })
