@@ -6,8 +6,7 @@ let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 axios.defaults.headers.common['X-CSRF-Token'] = token
 axios.defaults.headers.common['Accept'] = 'application/json'
 
-let blockCanvas = new BlockCanvas('canvas'),
-    resultElement = document.getElementById('prediction')
+let blockCanvas = new BlockCanvas('canvas')
 
 document.getElementsByClassName('reset')[0].addEventListener('click', (e) => {
   e.preventDefault()
@@ -26,8 +25,7 @@ document.getElementsByClassName('submit')[0].addEventListener('click', (e) => {
   .then((res) => {
     setTimeout(() => {
       e.target.classList.remove('is-loading')
+      document.getElementById('prediction').innerHTML = res.data.predict
     }, 400)
-
-    resultElement.innerHTML = res.data.predict
   })
 })
