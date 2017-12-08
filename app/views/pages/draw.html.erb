@@ -1,9 +1,37 @@
-<h1 class="title">Draw a digit</h1>
-<h2 class="subtitle" id="prediction"></h2>
-<div class="reset button is-danger">Reset</div>
-<div class="submit button is-primary">Submit</div>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Draw a digit!
+      </h1>
+    </div>
+  </div>
+</section>
 
-<div class="div" id="canvas"></div>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-5">
+        <div class="canvas">
+          <div class="block-container" id="canvas"></div>
+        </div>
+      </div>
+      <div class="column is-2 flex-centered">
+        <div class="submit button is-primary">Submit =></div><br>
+        <div class="reset button is-danger">Reset</div>
+      </div>
+      <div class="column is-5">
+        <div id="prediction" class="flex-centered"></div>
+      </div>
+    </div>
+
+    <!-- <h2 class="subtitle" id="prediction"></h2>
+    <div class="reset button is-danger">Reset</div>
+    <div class="submit button is-primary">Submit</div>
+
+     -->
+  </div>
+</section>
 
 <!-- js -->
 <%= javascript_pack_tag 'pages/draw' %>
